@@ -1,0 +1,37 @@
+<section class="catalogo">
+    <header class="barradetarefas">
+        <h2>Catálogo</h2>
+        <div class="acoes-header">
+            <button class ="btn sopromo" 
+            [class.ativo]="apenasPromo()"
+            (click)="alternarPromo()">
+            @if(apenasPromo()){
+            Mostrar todos
+            }
+            @else {
+            Promoções
+            }
+        </button>
+
+        <button type="button" class="btn primary" (click)="onCreateProduct('/produtos/novo')">
+            + Novo Produto
+        </button>
+    </div>
+    </header>
+    @if(carregando()) {
+        <p>Carregando Produtos...</p>
+    }
+    @else if(produtosExibidos().length == 0){
+    <p class="vazio">Nenhum produto encontrado para ser exibido.</p>
+    }
+    @else {
+        <div class ="grid">
+            @for(prod of produtosExibidos(); track prod.id){
+                <app-card-produto [produto]="prod" 
+                (add)="onAddProduct($event)" 
+                (view)="onViewProduct($event)">
+                </app-card-produto>
+            }
+        </div>
+    }
+</section>
