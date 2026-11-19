@@ -2,12 +2,16 @@
     <img src="Imagens/Plantbox-Transparent.png" routerLink="/"/>
     <h1>{{ titulo() }}</h1>
     <nav>
-        <a routerLink="/">Home</a>
         <a routerLink="/produtos">Produtos</a>
-        <a routerLink="/sobre">Sobre</a>
         <a class="cart-wrapper" routerLink="/carrinho">
-        <span class="cart-icon">🛒</span>
-        <span class="badge">{{qtdCarrinho()}}</span>
-    </a>
+            <span class="cart-icon">🛒</span>
+            <span class="badge">{{qtdCarrinho()}}</span>
+        </a>
+        <!-- Re-estruturar o cart wrapper para ser plain text ao inves de utilizar badge -->
+        <a routerLink="/Pedidos">Meus Pedidos</a>
+        <a routerLink="/Admin">Admin</a>
+        <a routerLink="/Login">Sair</a>
+        <!-- <a routerLink="/sobre">Sobre</a> -->
+         <!-- /Admin, /Login e /Pedidos não estão implementados ainda, Sair vai mandar devolta para a pagina de login. -->
     </nav>
 </header>
