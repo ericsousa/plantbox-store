@@ -16,7 +16,7 @@ export class QuantidadeControle {
   }
 
   incrementar(){
-    this.contador.update(v => Math.min(99,v+1));
+    this.contador.update(v => Math.min(99,v+1)); //mudar o valor 99 para o atributo .estoque quando ser implementado
 
   }
 }

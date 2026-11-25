@@ -29,7 +29,7 @@
 
 .titulo {
   margin: 0;
-  font-size: 1.1rem;
+  font-size: larger;
   color: #111827;
 }
 
@@ -46,7 +46,8 @@
 
 .preco {
   font-weight: 700;
-  color: #19C227;
+  color: #378A06;
+  font-size: larger;
 }
 
 .preco-container {
@@ -64,19 +65,25 @@
 .preco.desconto {
   color: #d32f2f;
   font-weight: bold;
+  font-size: larger;
 }
 
 .preco.original {
   text-decoration: line-through;
   color: #888;
-  font-size: 0.9rem;
+  font-size: larger;
+}
+
+.estoque {
+  color: #696969;
+  font-size: larger;
 }
 
 .acoes {
   display: flex;
   gap: 12px;
   margin-top: 8px;
-  justify-content: right;
+  justify-content: Middle;
 }
 
 .esgotado {
@@ -95,6 +102,7 @@
 .btn.primary {
   background: #2f9e41;
   color: #fff;
+  width:350px
 }
 
 .btn.primary:hover {

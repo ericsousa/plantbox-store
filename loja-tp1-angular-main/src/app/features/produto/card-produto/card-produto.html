@@ -3,6 +3,7 @@
     <div class = "conteudo">
         <header class='cabeçalho'>
             <h3 classs ="titulo">{{this.produto().nome | truncar:25:true:'...' }}</h3>
+            
 
             @switch (produto().estado){
                 @case('novo'){
@@ -17,13 +18,16 @@
             }
         </header>
         
-        <p class="desc">{{ produto().descricao | truncar:25:true:'...'}}</p>
+        <!-- <p class="desc">{{ produto().descricao | truncar:25:true:'...'}}</p> -->
 
         <!-- <div class="linhapreco">
             <span class="preco">{{produto().preco | currency: 'BRL':'symbol':'1.2-2' }}</span>
             <app-quantidade-controle [(contador)]="quantidade"></app-quantidade-controle>
         </div> -->
+
+        
         <div class="preco-container">
+            
             @if(produto().promo){
                 <div class = "preco-grupo">
                     <span class="preco desconto">
@@ -39,15 +43,17 @@
                     {{ produto().preco | currency:'BRL':'symbol':'1.2-2'}}
                 </span>
             } 
-            @if(produto().estado != 'esgotado'){
+            <!-- @if(produto().estado != 'esgotado'){
                 <app-quantidade-controle [(contador)]="quantidade"></app-quantidade-controle>
-            } 
+            }  -->
+                <a class="estoque">Estoque: Não existe</a> <!--não tem função de estoque ainda então precisamos ver onde vamos atribuir e recuperar o valor-->
         </div>
 
         <div class="acoes">
             @if(produto().estado != 'esgotado' && quantidade() > 0){
-            <button type="button" class="btn primary" (click)="onAdd()">Adicionar</button>}
-            <button type="button" class="btn ghost" (click)="onView()">Detalhes</button>
+            <button type="button" class="btn primary" (click)="onAdd()">Adicionar ao Carrinho</button>}
+            <!-- <button type="button" class="btn ghost" (click)="onView()">Detalhes</button> -->
+             <!-- detalhe não faz parte do prototipo no momento então ele está comentado. -->
         </div>
 
     </div> 
